@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-6">
+        <div class="form container">
+            <form style="margin: auto;">
+                <div class="form-group">
+                    <div class="row" style="justify-content: center;">
+                        <button (click)="sumarPuntoRojos()" type="submit" class="btn btn-danger btn-sm">Sumar
+                            punto</button>
+                    </div>
+                    <div class="row mt-2" style="justify-content: center;">
+                        <button (click)="restarPuntoRojos()" type="submit" class="btn btn-danger btn-sm">Restar
+                            punto</button>
+                    </div>
+                    <br>
+                    <div class="row" style="justify-content: center;">
+                        <input [(ngModel)]="puntajeRojosInput" [ngModelOptions]="{standalone: true}" type="number"
+                            class="form-control" style="max-width: 100px;" id="puntajeRojo"
+                            aria-describedby="puntajeRojo" placeholder="Ej: 5" min="1">
+                    </div>
+                </div>
+                <div class="row" style="justify-content: center;">
+                    <button (click)="modificarPuntajeRojos()" type="submit" class="btn btn-danger">Sumar puntaje</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form container">
+            <form style="margin: auto;">
+                <div class="form-group">
+                    <div class="row" style="justify-content: center;">
+                        <button (click)="sumarPuntoAzules()" type="submit" class="btn btn-primary btn-sm">Sumar
+                            punto</button>
+                    </div>
+                    <div class="row mt-2" style="justify-content: center;">
+                        <button (click)="restarPuntoAzules()" type="submit" class="btn btn-primary btn-sm">Restar
+                            punto</button>
+                    </div>
+                    <br>
+                    <div class="row" style="justify-content: center;">
+                        <input [(ngModel)]="puntajeAzulesInput" [ngModelOptions]="{standalone: true}" type="number"
+                            class="form-control" style="max-width: 100px;" id="puntajeRojo"
+                            aria-describedby="puntajeRojo" placeholder="Ej: 5" min="1">
+                    </div>
+                </div>
+                <div class="row" style="justify-content: center;">
+                    <button (click)="modificarPuntajeAzules()" type="submit" class="btn btn-primary">Sumar
+                        puntaje</button>
+                </div>
+           
+            </form>
+        </div>
+    </div>
+</div>
