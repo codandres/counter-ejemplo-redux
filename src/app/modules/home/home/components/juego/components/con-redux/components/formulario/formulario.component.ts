@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppStore } from 'src/app/shared/store/store';
-import { sumarPuntoRojos, restarPuntoRojos, modificarPuntajeRojos, modificarPuntajeAzules, sumarPuntoAzules, restarPuntoAzules } from 'src/app/shared/store/actions/juego.actions';
+import {
+  sumarPuntoRojos, restarPuntoRojos, modificarPuntajeRojos,
+  modificarPuntajeAzules, sumarPuntoAzules, restarPuntoAzules
+} from 'src/app/shared/store/actions/juego.actions';
 
 @Component({
   selector: 'app-formulario',
@@ -10,35 +13,35 @@ import { sumarPuntoRojos, restarPuntoRojos, modificarPuntajeRojos, modificarPunt
 })
 export class FormularioComponent {
 
-  puntajeRojosInput: number;
-  puntajeAzulesInput: number;
+  puntajeRojosInput = 0;
+  puntajeAzulesInput = 0;
 
-  constructor(private store: Store<AppStore>) { }
+  constructor(private readonly store: Store<AppStore>) { }
 
 
-  sumarPuntoRojos() {
-    this.store.dispatch(sumarPuntoRojos())
+  sumarPuntoRojos(): void {
+    this.store.dispatch(sumarPuntoRojos());
   }
 
-  restarPuntoRojos() {
-    this.store.dispatch(restarPuntoRojos())
+  restarPuntoRojos(): void {
+    this.store.dispatch(restarPuntoRojos());
 
   }
 
-  modificarPuntajeRojos() {
+  modificarPuntajeRojos(): void {
     this.store.dispatch(modificarPuntajeRojos({ puntaje: this.puntajeRojosInput }));
   }
 
-  sumarPuntoAzules() {
-    this.store.dispatch(sumarPuntoAzules())
+  sumarPuntoAzules(): void {
+    this.store.dispatch(sumarPuntoAzules());
   }
 
-  restarPuntoAzules() {
-    this.store.dispatch(restarPuntoAzules())
+  restarPuntoAzules(): void {
+    this.store.dispatch(restarPuntoAzules());
 
   }
 
-  modificarPuntajeAzules() {
+  modificarPuntajeAzules(): void {
     this.store.dispatch(modificarPuntajeAzules({ puntaje: this.puntajeAzulesInput }));
   }
 

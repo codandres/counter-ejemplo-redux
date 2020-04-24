@@ -7,53 +7,58 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormularioNormalComponent implements OnInit {
 
-  puntajeRojosInput: number;
-  puntajeAzulesInput: number;
+
+  puntajeRojosInput = 0;
+  puntajeAzulesInput = 0;
 
   puntosRojos: number;
   puntosAzules: number;
 
-  @Output() rojos: EventEmitter<number> = new EventEmitter<number>();
-  @Output() azules: EventEmitter<number> = new EventEmitter<number>();
+  @Output() rojosChange: EventEmitter<number> = new EventEmitter<number>();
+  @Output() azulesChange: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.inicializarValores();
+  }
+
+  inicializarValores(): void {
     this.puntosRojos = 0;
     this.puntosAzules = 0;
-    this.rojos.emit(this.puntosRojos);
-    this.azules.emit(this.puntosAzules);
+    this.rojosChange.emit(this.puntosRojos);
+    this.azulesChange.emit(this.puntosAzules);
   }
 
-  sumarPuntoRojos() {
+  sumarPuntoRojos(): void {
     this.puntosRojos++;
-    this.rojos.emit(this.puntosRojos);
+    this.rojosChange.emit(this.puntosRojos);
   }
 
-  restarPuntoRojos() {
+  restarPuntoRojos(): void {
     this.puntosRojos--;
-    this.rojos.emit(this.puntosRojos);
+    this.rojosChange.emit(this.puntosRojos);
   }
 
-  modificarPuntajeRojos() {
+  modificarPuntajeRojos(): void {
     this.puntosRojos = this.puntajeRojosInput;
-    this.rojos.emit(this.puntosRojos);
+    this.rojosChange.emit(this.puntosRojos);
   }
 
-  sumarPuntoAzules() {
+  sumarPuntoAzules(): void {
     this.puntosAzules++;
-    this.azules.emit(this.puntosAzules);
+    this.azulesChange.emit(this.puntosAzules);
   }
 
-  restarPuntoAzules() {
+  restarPuntoAzules(): void {
     this.puntosAzules--;
-    this.azules.emit(this.puntosAzules);
+    this.azulesChange.emit(this.puntosAzules);
   }
 
-  modificarPuntajeAzules() {
+  modificarPuntajeAzules(): void {
     this.puntosAzules = this.puntajeAzulesInput;
-    this.azules.emit(this.puntosAzules);
+    this.azulesChange.emit(this.puntosAzules);
   }
 
 }

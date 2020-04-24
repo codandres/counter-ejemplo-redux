@@ -36,5 +36,4 @@ export const selectJuegoState = (state: AppStore) => state.juego;
 export const selectPuntajes = createSelector(
     selectJuegoState,
     (state: JuegoState) => state
-    
 );

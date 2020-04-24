@@ -13,13 +13,13 @@ export class VistaPuntajeComponent implements OnInit {
   azules: number;
   rojos: number;
 
-  constructor(private store: Store<AppStore>) { }
+  constructor(private readonly store: Store<AppStore>) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.obtenerPuntajesJuego();
   }
 
-  obtenerPuntajesJuego() {
+  obtenerPuntajesJuego(): void {
     this.store.pipe(select(selectPuntajes))
       .subscribe((data: any) => {
         this.azules = data.azules;

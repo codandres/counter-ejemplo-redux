@@ -7,9 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class VistaPuntajeNormalComponent {
 
-  @Input() azules: number = 0;
-  @Input() rojos: number = 0;
+  @Input() azules: number;
+  @Input() rojos: number;
 
-  constructor() { }
+  constructor() {
+  }
 
 }

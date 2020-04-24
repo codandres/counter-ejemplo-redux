@@ -1,8 +1,17 @@
 <div class="row">
     <div class="col">
-        <app-sin-redux></app-sin-redux>
+        <app-sin-redux (reiniciarPuntajesChange)="reiniciarPuntajes=$event" [reiniciarPuntajes]="reiniciarPuntajes">
+        </app-sin-redux>
+        <div class="row" style="justify-content: center;">
+            <button (click)="reiniciarPuntajeNormal()" type="submit" class="btn btn-info mt-5">Reiniciar
+                puntaje</button>
+        </div>
     </div>
     <div class="col">
         <app-con-redux></app-con-redux>
+        <div class="row" style="justify-content: center;">
+            <button (click)="reiniciarPuntajeRedux()" type="submit" class="btn btn-info mt-5">Reiniciar
+                puntaje</button>
+        </div>
     </div>
 </div>
